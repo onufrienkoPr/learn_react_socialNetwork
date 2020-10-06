@@ -1,0 +1,8 @@
+.userphoto {
+    width: 70px;
+    border-radius: 50%;
+}
+.selectedPage{
+    font-weight: bold;
+    background-color: #eaddfa;
+}

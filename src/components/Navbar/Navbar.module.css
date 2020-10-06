@@ -1,0 +1,31 @@
+.nav {
+  padding: 20px 20px 0px 20px;
+  grid-area: n;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+}
+
+.item a {
+  font-weight: 400;
+  text-decoration: none;
+  color: #cacaca;
+  font-size: 22px;
+  font-family: 'Arial';
+}
+
+.item a.activeLink {
+  color: #42f590;
+}
+
+.settings {
+    margin-top: 40px;
+}
+
+.friends {
+  margin-top: 70px;
+}
+
+p {
+  font-size: 30px;
+  color: #eaddfa;
+}

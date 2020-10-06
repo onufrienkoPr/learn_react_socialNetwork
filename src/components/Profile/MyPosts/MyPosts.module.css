@@ -1,0 +1,30 @@
+.postBlock {
+    padding: 15px;
+}
+.posts {
+    margin-top: 10px;
+    font-size: 18px;
+}
+textarea {
+    width: 200px;
+    height: 60px;
+    padding: 5px;
+    padding-top: 10px;
+    resize: none;
+    border-radius: 15px;
+    font-size: 15px;
+    outline: none;
+}
+.postBlock p {
+    color: #ffffff;
+}
+button {
+    margin-top: 6px;
+    outline: none;
+    width: 213px;
+    height: 30px;
+    font-size: 15px;
+    background-color: #42f590;
+    border-radius: 20px;
+    border: 0px;
+}

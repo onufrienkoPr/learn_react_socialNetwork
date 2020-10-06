@@ -1,0 +1,27 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+}
+.dialogsItems {
+    padding: 10px;
+    color: white;
+}
+.dialogsItems .active {
+    color: white;
+}
+.messages {
+    color: #a1a1a1;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+.butmess{
+    margin-top: 3px;
+    outline: none;
+    width: 213px;
+    height: 30px;
+    font-size: 15px;
+    background-color: #42f590;
+    border-radius: 20px;
+    border: 0px;
+}
