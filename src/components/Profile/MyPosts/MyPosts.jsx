@@ -25,7 +25,7 @@ const MyPosts = (props) => {
           <textarea placeholder='Напишите пост ...' onChange={onPostChange} value={newPostText} />
         </div>
         <div>
-          <button onClick={addPostik}>Add post</button>
+          <button onClick={addPostik}>Add postik</button>
         </div>
       </div>
       <div className={s.posts}>
