@@ -6,10 +6,10 @@ import {usersAPI} from "../../api/api";
 
 let Users = (props) => {
 
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize); // получаем общее количество страниц
-    let pages = []; // создаем массив страниц
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
+    let pages = [];
     for (let i = 1; i <= pagesCount; i++) {
-        pages.push(i); // заполняем массив
+        pages.push(i);
     }
 
     return (
@@ -17,13 +17,13 @@ let Users = (props) => {
             <div>
                 {pages.map(p => {
                     return <span
-                        className={props.currentPage === p && s.selectedPage} // задаем стиль для текущей страницы
+                        className={props.currentPage === p && s.selectedPage}
                         onClick={() => {
                             props.onPageChanged(p)
-                        }}>{p}</span> // передаем новую страницу в oPC
+                        }}>{p}</span>
                 })}
             </div>
-            { // ниже мапим юзеров и даем ключи
+            {
                 props.users.map(u =>
                     <div key={u.id}>
                     <span>
@@ -34,22 +34,29 @@ let Users = (props) => {
                         </div>
                         <div>
                             {u.followed
-                                ? <button onClick={() => {
+
+                                ? <button disabled={props.isProgress.some(id => id === u.id)} onClick={() => {
+                                    props.toggleFollowingProgress(true, u.id);
                                     usersAPI.unfollow(u.id)
                                         .then(response => {
                                             if (response.data.resultCode == 0) {
                                                 props.unfollow(u.id)
                                             }
+                                            props.toggleFollowingProgress(false, u.id);
                                         });
                                 }}>Unfollow</button>
-                                : <button onClick={() => {
+
+                                : <button disabled={props.isProgress.some(id => id === u.id)} onClick={() => {
+                                    props.toggleFollowingProgress(true, u.id);
                                     usersAPI.follow(u.id)
                                         .then(response => {
                                             if (response.data.resultCode == 0) {
                                                 props.follow(u.id)
                                             }
+                                            props.toggleFollowingProgress(false, u.id);
                                         });
-                                }}>Follow</button>}
+                                }}>Follow</button>
+                            }
                         </div>
                     </span>
 
