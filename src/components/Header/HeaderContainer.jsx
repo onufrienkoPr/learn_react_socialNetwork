@@ -13,7 +13,7 @@ class HeaderContainer extends React.Component {
     }
 }
 const MapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth, // залогинился тру/фолс
+    isAuth: state.auth.isAuth, // bool
     login: state.auth.login // перекидываем логин
 });
 

@@ -2,10 +2,11 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogsItem";
+import {Redirect} from "react-router-dom";
 
 const Dialogs = (props) => {
     let state = props.messagesPage;
-    
+
     let dialogsElements = state.dialogs.map(d => <DialogItem id={d.id} icon={d.icon} name={d.name} key={d.id}/>);
     let messagesElements = state.messages.map(m => <Message message={m.message} key={m.id}/>);
     let newMessageBody = state.newMessageBody;
@@ -28,7 +29,7 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 {messagesElements}
                 <div>
-                    <textarea placeholder='Введите сообщение ...' value={newMessageBody} onChange={onMessageChange} />
+                    <textarea placeholder='Введите сообщение ...' value={newMessageBody} onChange={onMessageChange}/>
                 </div>
                 <div>
                     <button className={s.butmess} onClick={onAddMessageClick}>Send message</button>

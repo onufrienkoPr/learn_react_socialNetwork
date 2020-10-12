@@ -1,6 +1,4 @@
-import {authAPI, usersAPI} from "../api/api";
-import {setTotalUsersCount, setUsers, toggleIsFetching} from "./users-reducer";
-
+import {authAPI} from "../api/api";
 const SET_USER_DATA = 'SET_USER_DATA';
 
 let initialState = {
@@ -28,9 +26,9 @@ export const setAuthUserData = (id, email, login) => ({type: SET_USER_DATA, data
 export const getAuthUserData = () => (dispatch) => {
         authAPI.me()
             .then(response => {
-                if (response.data.resultCode === 0) { // если получены данные то
-                    let {id, email, login} = response.data.data; // данные из data
-                    dispatch(setAuthUserData(id, email, login)); //херячим через экшкреатор в редусер
+                if (response.data.resultCode === 0) {
+                    let {id, email, login} = response.data.data;
+                    dispatch(setAuthUserData(id, email, login)); // вызов AC с полученными данными
                 }
             });
 }
