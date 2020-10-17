@@ -1,5 +1,4 @@
 const ADD_MESSAGE = 'ADD-MESSAGE';
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 
 let initialState = {
     dialogs: [
@@ -11,29 +10,21 @@ let initialState = {
         {id: 1, message: 'Hi'},
         {id: 2, message: 'How is your fdccg?'},
         {id: 3, message: 'Yo'}
-    ],
-    newMessageBody: ''
+    ]
 };
 
 const messagesReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_MESSAGE:
-            let body = state.newMessageBody;
+            let body = action.newMessageBody;
             return {
                 ...state,
-                messages: [...state.messages, {id: 4, message: body}],
-                newMessageBody: ''
-            };
-        case UPDATE_NEW_MESSAGE_BODY:
-            return {
-                ...state,
-                newMessageBody: action.body
+                messages: [...state.messages, {id: 4, message: body}]
             };
         default:
             return state;
     }
 }
 
-export const addMessage = () => ({type: ADD_MESSAGE})
-export const updateNewMessageBody = (body) => ({type: UPDATE_NEW_MESSAGE_BODY, body})
+export const addMessage = (newMessageBody) => ({type: ADD_MESSAGE, newMessageBody})
 export default messagesReducer;
