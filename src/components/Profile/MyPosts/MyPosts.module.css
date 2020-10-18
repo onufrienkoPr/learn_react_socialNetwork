@@ -1,10 +1,12 @@
 .postBlock {
     padding: 15px;
 }
+
 .posts {
     margin-top: 10px;
     font-size: 18px;
 }
+
 textarea {
     width: 200px;
     height: 60px;
@@ -15,16 +17,25 @@ textarea {
     font-size: 15px;
     outline: none;
 }
+
 .postBlock p {
     color: #ffffff;
 }
+
 button {
     margin-top: 6px;
     outline: none;
     width: 213px;
     height: 30px;
     font-size: 15px;
-    background-color: #42f590;
+    background-color: #3de385;
     border-radius: 20px;
     border: 0px;
+}
+
+button:hover {
+    background-color: #42f590;
+}
+button:active {
+    background-color: #3de385;
 }
