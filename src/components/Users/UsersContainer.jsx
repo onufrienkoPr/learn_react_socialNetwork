@@ -21,17 +21,16 @@ class UsersContainer extends React.Component {
 
     render() {
         return <>
-            {this.props.isFetching ? <Preloader/> : null}
-                <Users // чисто прокидываем
-                    totalUsersCount={this.props.totalUsersCount}
-                    pageSize={this.props.pageSize}
-                    currentPage={this.props.currentPage}
-                    onPageChanged={this.onPageChanged}
-                    users={this.props.users}
-                    follow={this.props.follow}
-                    unfollow={this.props.unfollow}
-                    isProgress={this.props.isProgress}
-                />
+            {this.props.isFetching ? <Preloader/> :
+                <Users totalUsersCount={this.props.totalUsersCount}
+                       pageSize={this.props.pageSize}
+                       currentPage={this.props.currentPage}
+                       onPageChanged={this.onPageChanged}
+                       users={this.props.users}
+                       follow={this.props.follow}
+                       unfollow={this.props.unfollow}
+                       isProgress={this.props.isProgress}
+                />}
         </>
     }
 }
@@ -52,6 +51,5 @@ export default compose(
         follow,
         unfollow,
         getUsers
-    }),
-    WithAuthRedirect
+    })
 )(UsersContainer)
